@@ -35,3 +35,25 @@ symptoms = factor(c("SEVERE","MILD","MODERATE"), levels = c("MILD","MODERATE","S
 symptoms
 
 symptoms > "MODERATE"
+
+
+# lista
+
+lista = list(name = subject_name[1],
+               temperature = temperature[1],
+               flu_status = flu_status[1],
+               gender = gender[1],
+               blood = blood[1],
+               symptoms = symptoms[1])
+
+
+lista[1:5]
+
+#criando um dataframe
+
+pt_data = data.frame(subject_name,temperature,flu_status,gender,
+                     blood,symptoms,stringAsFactors = FALSE)
+
+#mostra o dataframe
+pt_data
+
