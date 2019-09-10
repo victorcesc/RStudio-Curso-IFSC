@@ -36,10 +36,16 @@ summary(wbcd_n$area_mean)
 
 #criando um training e test data
 wbcd_train = wbcd_n[1:469,] #todas as linhas e todas as colunas
-wbcd_test = wbcd[470:569,]#linha 470 ate 569 e todas as colunas
+wbcd_test = wbcd_n[470:569,]#linha 470 ate 569 e todas as colunas
+
+
 
 #criando rotulos para training e test data
 wbcd_train_labels = wbcd[1:469,1]
 wbcd_test_labels = wbcd[470:569,1]
 
 wbcd_test_pred = knn(train = wbcd_train,test = wbcd_test,cl = wbcd_train_labels,k=21)
+
+#tem que instalar o pacote gmodels
+library(gmodels)
+CrossTable(x = wbcd_test_labels,y = wbcd_test_pred, prop.chisq = FALSE)
